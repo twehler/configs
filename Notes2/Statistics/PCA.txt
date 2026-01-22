@@ -1,0 +1,59 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2025-08-02T23:09:28+02:00
+
+====== PCA ======
+Created Saturday 02 August 2025
+
+**PCA = Principal Component Analysis**
+→ technique to reduce variables (dimensions) in a dataset while preserving as much important information (variance) as possible
+
+“Let’s turn the cloud of data to look at it from the most meaningful angle — and then flatten it without losing much.”
+
+
+
+=== You'd apply PCA when: ===
+
+* You have too many variables (columns).
+* You want to visualize high-dimensional data (e.g., from 50D to 2D).
+* You want to reduce noise or redundancy.
+* You're preparing data for machine learning, especially when the model struggles with too many features.
+
+
+=== Basic Idea — Step by Step ===
+
+Let’s go step-by-step using an intuitive example:
+
+Imagine you measure the length and width of 100 leaves.
+
+You now have a dataset with 2 features:
+Length and Width. They’re probably correlated: longer leaves tend to be wider.
+
+1. **Plot the data**
+It forms a cloud in 2D space. Probably a diagonal shape.
+
+2. **Center the data**
+Subtract the mean from each column → the data is now centered around (0,0).
+
+3. **Find the directions of maximum variance**
+
+These directions are the principal components.
+
+	The first principal component (PC1) is the direction in which the data varies the most.
+
+	The second principal component (PC2) is orthogonal (perpendicular) to the first, and explains the second most variance.
+
+If you imagine a long diagonal cloud, PC1 would point along the cloud’s direction.
+4. Project the data onto these new axes
+
+This step rotates the data onto PC1 and PC2.
+Instead of using Length and Width, we now describe each leaf by:
+
+	How far it lies along PC1
+
+	How far it lies along PC2
+
+5. Dimensionality reduction
+
+If PC1 explains, say, 95% of the variance, and PC2 only 5%, we might decide to drop PC2.
+This means we reduce our data from 2D to 1D, with minimal loss of information.

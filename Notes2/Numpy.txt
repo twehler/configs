@@ -1,0 +1,11 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2025-08-08T18:03:21+02:00
+
+====== Numpy ======
+Created Friday 08 August 2025
+
+=== Check version: ===
+import numpy
+numpy.version.version
+

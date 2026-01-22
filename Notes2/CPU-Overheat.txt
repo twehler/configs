@@ -1,0 +1,17 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2025-09-01T14:08:30+02:00
+
+====== CPU-Overheat ======
+Created Monday 01 September 2025
+
+=== Cap CPU usage to a maximum temperature on Linux for specific process: ===
+
+sudo apt install lm-sensors
+sudo apt install cpulimit
+
+cd [[/mnt/sda3/data1/CustomLinuxScripts/]]
+./cpu_usage_temp_cap.sh <max_temp> <process PID> <cpu-limit (optional, will have big impact on performance)>
+
+
+

@@ -1,0 +1,23 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2025-10-19T19:08:04+02:00
+
+====== Disks ======
+Created Sunday 19 October 2025
+
+=== View all  mounted disks ===
+df -h
+
+=== View all plugged Disks and their UUID: ===
+lsblk -f
+
+=== File system check: ===
+
+
+
+=== Read-Only test: ===
+sudo umount [[/dev/sdXx]] **(very important, otherwise risk of corruption!)**
+sudo badblocks -sv [[/dev/sdXx]]
+
+=== Deep health check ===
+sudo smartctl -t long /dev/sdXx

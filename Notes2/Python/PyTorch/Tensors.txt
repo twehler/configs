@@ -1,0 +1,11 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2025-10-11T17:04:24+02:00
+
+====== Tensors ======
+Created Saturday 11 October 2025
+
+=== Pandas series to Torch Tensor: ===
+
+np_array = np.stack(pandas_series)
+tensor1 = torch.tensor(np_array)

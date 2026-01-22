@@ -1,0 +1,25 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2025-07-16T18:18:20+02:00
+
+====== RDKit in R (with Conda, Linux) ======
+Created Wednesday 16 July 2025
+
+
+
+Bester Weg: reticulate package (kann Python Module in R verwenden)
+Vorraussetzung: RDKit für Python ist bereits installiert
+
+=== 1. Set up RDKit environment with Conda ===
+conda create -n rdkit-env python=3.9 rdkit -c conda-forge
+conda activate rdkit-env
+which python (returns environment Python path)
+
+=== 2. Tell reticulate where Conda is ===
+
+In R:
+
+library(reticulate)
+use_python(<insert environment python path>)
+use_condaenv("rdkit-env", required = TRUE)
+rdkit <- import("rdkit")

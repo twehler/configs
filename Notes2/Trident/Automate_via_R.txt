@@ -1,0 +1,45 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2025-07-15T17:44:37+02:00
+
+====== Automate via R ======
+Created Tuesday 15 July 2025
+
+After installation, we want to use Trident via web-scraping, because no API has been exposed (at the moment of creating this test). 
+Required packages: RSelenium, rvest, wdman
+
+Problem: Paywall with Firefox, because rsDriver() tries to download PhantomJS, triggering a 402 Payment Required error.
+
+===== Using Firefox with RSelenium and Docker: =====
+
+**First, let's set up Selenium server (which then allows the R Script to control Firefox in an automated way):**
+sudo docker pull selenium/standalone-firefox:3.141.59-20210913
+sudo docker run -d -p 4445:4444 -v /dev/shm:/dev/shm selenium/standalone-firefox:3.141.59-20210913
+
+-p 4445:4444	- 	Forwards port 4444 inside the container to your local port 4445
+-v /dev/shm:/dev/shm	-	Fixes memory problems with browser rendering
+selenium/standalone-firefox	-	This image includes: Firefox + Geckodriver + Selenium server
+
+**Test it:** 
+curl http://localhost:4445/wd/hub/status 
+(should return contents of JSON script)
+
+===== In R: =====
+remDr <- remoteDriver(
+  remoteServerAddr = "localhost",
+  port = 4445L,
+  browserName = "firefox",
+  version = "latest",
+  extraCapabilities = list(seamless = TRUE),
+)
+remDr$open()
+
+**In this example, Trident uses port 8501**
+remDr$navigate("localhost:8501")
+
+
+
+
+
+
+

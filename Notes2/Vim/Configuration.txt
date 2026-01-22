@@ -1,0 +1,40 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2026-01-03T17:19:06+01:00
+
+====== Configuration ======
+Created Saturday 03 January 2026
+
+required package: nodejs
+
+=== 1. create .vim folder since it doesn't exist by default: ===
+mkdir -p [[~/.vim/pack/plugins/start]]
+
+=== 2. edit [[~/.vimrc:]] ===
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+	\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall
+endif
+
+call plug#begin('~/.vim/plugged')
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  Plug 'preservim/nerdtree'
+  Plug 'vim-airline/vim-airline'
+  Plug 'Yggdroot/indentLine'
+call plug#end()
+
+" Basic Python setting: use 4 spaces for tabs
+autocmd FileType python setlocal shiftwidth=4 tabstop=4 expandtab
+
+let g:indentLine_char = '┊'
+let g:indentLine_enabled = 1
+" This ensures the plugin doesn't hide quotes in JSON or Markdown files
+let g:indentLine_concealcursor = 'inc'
+let g:indentLine_conceallevel = 2
+
+=== 3. Inside Vim, run :PlugInstall ===
+
+=== (regarding NERDTree: The activation via :NERDTreeToggle is mapped to crtl+n, see ~/.vimrc) ===
+
+

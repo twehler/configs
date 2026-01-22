@@ -1,0 +1,19 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2025-07-22T19:51:30+02:00
+
+====== UbuntuCommands ======
+Created Tuesday 22 July 2025
+
+**View IP-Adress:**
+hostname -I
+
+**Transfer File via local network via scp:**
+scp /path/to/file username@IP_of_B:/destination/path
+
+**List folders for their size in a depth of 7:**
+du --max-depth=7 /* | sort -n
+→ this is being applied to the folder /*
+
+**Remount:**
+sudo mount -o remount /mnt/sda3

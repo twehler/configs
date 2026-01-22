@@ -1,0 +1,57 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2025-08-02T19:43:08+02:00
+
+====== Convolutional Neural Networks ======
+Created Saturday 02 August 2025
+
+= Neurons are locally connected, not to every single neuron in the same layer (safes computing time)
+
+
+=== Typical CNN flow: ===
+
+Input image or molecule (e.g., 32x32 pixels or 3D grid)
+↓
+Convolution Layer (learns patterns)
+↓
+ReLU activation (adds non-linearity)
+↓
+Pooling Layer (compresses info)
+↓
+Another Conv + Pool (deeper features)
+↓
+Flatten
+↓
+Fully Connected Layers
+↓
+Output (e.g., class probabilities)
+
+--------------------
+
+=== Convolution Layer ===
+→ Relevant for Ashvini 1 by recognizing functional groups in molecules or predict interactions with biological systems (like danger for fish liver etc.)
+
+→ Convolutions automatically learn local patterns & use fewer patterns
+→ applies filters (small matrices) to an input to extract features (like edges and shapes in images for example)
+→ for images: Small stencil "scans" the image and scales it down
+
+--------------------
+
+=== Pooling Layer ===
+= reducing the convolution layer into smaller, simplified samples (subsampling)
+→ focus on high-level abstractions
+→ compressing information in order to save computation power and avoid overfitting
+→ Average, max-level etc... many information reduction mechanisms are possible
+
+
+
+
+
+
+
+
+
+
+
+
+

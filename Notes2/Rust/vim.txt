@@ -1,0 +1,11 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2026-01-21T20:39:57+01:00
+
+====== vim ======
+Created Wednesday 21 January 2026
+
+=== 1. Add rustup and rust-src ===
+rustup component add rust-src
+
+2. 

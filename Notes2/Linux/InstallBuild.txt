@@ -1,0 +1,11 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2025-11-11T16:22:25+01:00
+
+====== InstallBuild ======
+Created Tuesday 11 November 2025
+
+=== After building tell the system the path to the binary, so it can be properly executed: ===
+
+echo 'export PATH="/path/to/your/bin:$PATH"' >> ~/.bashrc
+source ~/.bashrc

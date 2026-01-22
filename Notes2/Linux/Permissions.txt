@@ -1,0 +1,9 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2025-10-16T15:07:29+02:00
+
+====== Permissions ======
+Created Thursday 16 October 2025
+
+=== Create "public folder", where everyone can freely read, write and execute ===
+sudo chmod -R 777 /path/to/folder

@@ -1,0 +1,37 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2025-12-06T19:33:52+01:00
+
+====== Run-with-CUDA ======
+Created Saturday 06 December 2025
+
+=== Test if GPU support is enabled: ===
+gmx --version
+
+=== Install CUDA (for newest version check NVIDIA homepage) ===
+**use the .run file:**
+wget https://developer.download.nvidia.com/compute/cuda/13.1.0/local_installers/cuda_13.1.0_590.44.01_linux.run
+sudo sh cuda_13.1.0_590.44.01_linux.run
+
+**IMPORTANT: Dialogue**
+→ Be sure that your CUDA installation is compatible with your current nvidia-driver!
+**Since you already have a nvidia-driver, uncheck the option "Driver" (spacebar), then select enter**
+
+=== After Installation of CUDA: Source CUDA path ===
+# Add CUDA to your PATH permanently
+echo '' >> ~/.bashrc
+echo '# CUDA 13.0 Environment' >> ~/.bashrc
+echo 'export PATH=/usr/local/cuda-13.0/bin:$PATH' >> ~/.bashrc
+echo 'export LD_LIBRARY_PATH=/usr/local/cuda-13.0/lib64:$LD_LIBRARY_PATH' >> ~/.bashrc
+echo 'export CUDACXX=/usr/local/cuda-13.0/bin/nvcc' >> ~/.bashrc
+source [[~/.bashrc]]
+
+
+=== Navigate to original GROMACS folder & build GROMACS ===
+cd <GROMACS folder>
+mkdir build
+cd build
+cmake .. -DGMX_BUILD_OWN_FFTW=ON -DGMX_GPU=CUDA -DGMX_MPI=on -DREGRESSIONTEST_DOWNLOAD=ON
+make -j $(nproc --ignore=2) #build process in parallel, but leave 2 cores for other tasks
+make check
+sudo make install

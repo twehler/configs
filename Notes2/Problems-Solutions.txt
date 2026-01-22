@@ -1,0 +1,10 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2026-01-03T19:12:18+01:00
+
+====== Problems-Solutions ======
+Created Saturday 03 January 2026
+
+=== Weird Screen-Keyboard-Mouse Blackout problem with AMD CPUs: ===
+1. Global C-state Control | Auto/Enabled → Disabled
+2. Power Supply Idle Control | Auto/Enabled → Disabled

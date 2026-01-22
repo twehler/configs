@@ -1,0 +1,10 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2025-08-10T18:37:42+02:00
+
+====== Spyder ======
+Created Sunday 10 August 2025
+
+Jupyter Notebook Plugin:
+
+conda install spyder-notebook -c conda-forge

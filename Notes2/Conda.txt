@@ -1,0 +1,15 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2025-07-10T12:58:31+02:00
+
+====== Conda ======
+Created Thursday 10 July 2025
+
+=== Install: ===
+**Execute installer**
+The installer might however create a wrong or broken path in ~/.bashrc. If it does, remove all lines about conda in it and execute the following command in a terminal:
+
+~/<conda path>/bin/conda init bash
+
+**To make it usable in the current shell, type:**
+source ~/.bashrc

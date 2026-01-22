@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2025-07-15T15:30:43+02:00
+
+====== Tribble ======
+Created Tuesday 15 July 2025
+
+tribble()

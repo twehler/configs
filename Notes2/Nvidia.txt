@@ -1,0 +1,12 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2025-12-05T15:12:01+01:00
+
+====== Nvidia ======
+Created Friday 05 December 2025
+
+=== View Driver version: ===
+nvidia-smi 
+
+=== View CUDA version: ===
+nvcc --version

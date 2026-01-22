@@ -1,0 +1,9 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2026-01-19T21:33:44+01:00
+
+====== Bevy ======
+Created Monday 19 January 2026
+
+=== Linux dependencies: ===
+sudo apt-get install g++ pkg-config libx11-dev libasound2-dev libudev-dev libxkbcommon-x11-0 libwayland-dev libxkbcommon-dev libvulkan1 mesa-vulkan-drivers

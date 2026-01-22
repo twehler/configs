@@ -1,0 +1,18 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2025-10-09T09:37:25+02:00
+
+====== HTTrack ======
+Created Thursday 09 October 2025
+
+**Software for mirroring web-pages**
+
+=== Usage: ===
+httrack <website url> -O <path on local disk> "+*<optional: specific website branch>"
+
+=== Usage example for RDKit-Documentation: ===
+httrack "https://www.rdkit.org/docs/" -O "/mnt/sda3/data1/Documentations/RDKit" "+*.rdkit.org/docs/*" 
+
+=== (important) Exclude Videos: ===
+
+httrack "https://example.com" -O "./example_site" \  "-*.mp4" "-*.avi" "-*.mov" "-*.mkv" "-*.webm" "-*.flv"

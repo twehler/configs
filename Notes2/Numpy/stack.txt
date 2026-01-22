@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2026-01-06T00:27:39+01:00
+
+====== stack ======
+Created Tuesday 06 January 2026
+
+merges two arrays, so that entries are paired up

@@ -1,0 +1,10 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2025-12-10T17:58:45+01:00
+
+====== Booting ======
+Created Wednesday 10 December 2025
+
+=== Update GRUB: ===
+sudo update-grub
+

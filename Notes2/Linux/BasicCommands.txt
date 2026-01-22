@@ -1,0 +1,24 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2025-11-02T18:28:16+01:00
+
+====== BasicCommands ======
+Created Sunday 02 November 2025
+
+=== Copy files: ===
+cp [[/target]] [[/destination]]
+
+=== Copy directories: ===
+cp -r [[/target]] [[/destination]]
+
+=== Remove (same syntax as cp): ===
+rm
+
+=== Move: ===
+mv
+
+=== create symlinks: ===
+sudo ln -s [[/folder]] [[/link/destination]]
+
+=== change screen color to yellowish (omit most blue lights): ===
+xsct 3000 (lower if needed)

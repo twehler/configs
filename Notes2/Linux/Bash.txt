@@ -1,0 +1,17 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2025-10-10T08:23:54+02:00
+
+====== Bash ======
+Created Friday 10 October 2025
+
+=== Make file executable: ===
+chmod +x myscript.sh
+
+=== Script header: ===
+#!/bin/sh
+
+=== apt ===
+sudo apt install <package> -y
+
+-y makes apt say "yes" to everything

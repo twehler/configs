@@ -1,0 +1,21 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2025-07-17T12:31:19+02:00
+
+====== Environments ======
+Created Thursday 17 July 2025
+
+**List all environments:** 
+conda env list
+
+**Show all environment locations:**
+conda config --show envs_dirs
+
+=== Example: Create new environment with RDKit: ===
+conda create -n envname python=3.9 rdkit -c conda-forge
+
+=== Rename Environment: ===
+conda rename -n old_name  new_name 
+
+=== Remove Environment: ===
+conda remove -n ENV_NAME --all

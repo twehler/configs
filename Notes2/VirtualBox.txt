@@ -1,0 +1,12 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2025-07-15T15:49:30+02:00
+
+====== VirtualBox ======
+Created Tuesday 15 July 2025
+
+=== Move the VirtualBox VMs folder (if it already exists): ===
+mv ~/"VirtualBox VMs" [[/mnt/external_disk/]]
+
+=== Update VirtualBox’s default path (via GUI or VBoxManage): ===
+VBoxManage setproperty machinefolder "/mnt/external_disk/VirtualBox VMs"

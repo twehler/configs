@@ -1,0 +1,31 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2025-11-05T20:18:11+01:00
+
+====== GROMACS ======
+Created Wednesday 05 November 2025
+
+=== Install: ===
+
+**#after installing newest CUDA version (here 13.1):**
+export PATH=/usr/local/cuda-13.1/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/cuda-13.1/lib64:$LD_LIBRARY_PATH
+export CUDACXX=/usr/local/cuda-13.1/bin/nvcc
+
+mkdir /home/twehler/GROMACS/gromacs-2025.3/build
+cd /home/twehler/GROMACS/gromacs-2025.3/build
+
+cmake .. -DGMX_BUILD_OWN_FFTW=ON -DGMX_GPU=CUDA -DGMX_MPI=on -DREGRESSIONTEST_DOWNLOAD=ON
+make
+make check
+sudo make install
+source /usr/local/gromacs/bin/GMXRC
+
+
+build according to instructions in INSTALL file
+echo 'source /path/to/your/gromacs/bin/GMXRC' >> ~/.bashrc
+source [[~/.bashrc]]
+
+	
+=== Run: ===
+gmx

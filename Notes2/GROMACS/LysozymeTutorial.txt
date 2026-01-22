@@ -1,0 +1,72 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2025-11-23T15:22:12+01:00
+
+====== LysozymeTutorial ======
+Created Sunday 23 November 2025
+
+===== 1. Remove residue water: =====
+(not universally appropiate)
+grep -v HOH protein.pdb > protein_clean.pdb
+
+===== 2. Processing Topology: =====
+gmx pdb2gmx -f protein_clean.pdb -o protein_processed.gro -water tip3p 
+(important: Choose correct force field!)
+
+===== 3. Define cubic solvation box: =====
+gmx editconf -f protein_processed.gro -o protein_newbox.gro -c -d 1.2 -bt cubic
+
+===== 4. Solvate: =====
+gmx solvate -cp protein_newbox.gro -cs spc216.gro -o protein_solv.gro -p topol.top
+
+===== 5. Add Ions: =====
+(grompp (Gromacs pre-processor) uses an input file with parameters to create a tpr file)
+(later, water molecules will be replaced with ions by the genion tool)
+
+=== tpr generation with grompp: ===
+(get the .mdp file beforehand, it contains the parameters)
+gmx grompp -f ions.mdp -c protein_solv.gro -p topol.top -o ions.tpr
+
+=== ion generation with genion: ===
+-s = structure/state file as input
+-o = output file
+-p = topology
+-pname = positive ion name
+-nname = negative ion name
+-neutral = tells genion to only add ions until a neutral charge has been achieved
+
+gmx genion -s ions.tpr -o protein_solv_ions.gro -p topol.top -pname NA -nname CL -neutral
+
+
+
+===== 6. Energy Minimization =====
+
+gmx grompp -f minim.mdp -c protein_solv_ions.gro -p topol.top -o em.tpr
+gmx mdrun -deffnm em -v -nt 4 	# carry out the EM
+
+=== Analysis: Check temperature ===
+gmx energy -f em.edr -o potential.xvg
+(check for potential and enter two times)
+
+===== 7. NVT Equibrilation =====
+
+gmx grompp -f nvt.mdp -c em.gro -r em.gro -p topol.top -o nvt.tpr
+gmx mdrun -deffnm nvt -nt 4 -v
+
+=== Analysis: Check temperature ===
+gmx energy -f nvt.edr -o temperature.xvg
+(select the temperature of the system and exit)
+
+===== 8. NPT Equilibration =====
+
+gmx grompp -f npt.mdp -c nvt.gro -r nvt.gro -t nvt.cpt -p topol.top -o npt.tpr
+gmx mdrun -deffnm npt -nt 4 -v
+
+=== Analysis: Check pressure and density ===
+gmx energy -f npt.edr -o pressure.xvg
+gmx energy -f npt.edr -o density.xvg 
+
+===== 9. Production run =====
+
+gmx grompp -f md.mdp -c npt.gro -t npt.cpt -p topol.top -o md_0_1.tpr
+gmx mdrun -deffnm md_0_1 -v -nt 4

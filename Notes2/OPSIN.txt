@@ -1,0 +1,10 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2025-08-01T11:06:01+02:00
+
+====== OPSIN ======
+Created Friday 01 August 2025
+
+Execute: 
+
+java -jar /mnt/sda3/data1/Studium-PC/Bachelor/Bachelorarbeit/OPSIN/opsin.jar

@@ -1,0 +1,17 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2026-01-17T10:51:45+01:00
+
+====== MemoryManagement ======
+Created Saturday 17 January 2026
+
+=== Allocation ===
+Reading memory happens almost equally fast in stack and heap, but allocation is much faster in the stack.
+
+=== Moving (moving ownership) ===
+If two pointers point to the same variable, the first pointer is invalidaded to ensure memory safety. This is called a "move".
+
+=== Copying ===
+let x = 5
+let y = x  // y is a copy of x
+

@@ -1,0 +1,43 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2025-08-07T21:09:53+02:00
+
+====== Glossar ======
+Created Thursday 07 August 2025
+
+
+=== Activation Function ===
+Activation functions make a neural network nonlinear, which is essential for learning complex patterns (like language, images, or molecular properties). 
+
+
+=== Cross-Entropy  H(P,Q) ===
+Average surprise you will get by observing a random variable governed by a real distribution P, while believing in its model Q.
+Cross-Entropy measures the total surprise you get when using Q to predict P (i.e. using the idea in your head in order to predict a real thing).
+=> Difference between model's predictions and reality
+
+=== Entropy H(P) ===
+Probability tells you how likely a single outcome is. Entropy tells you how uncertain the whole distribution is. Entropy is a property of the whole distribution. 
+It measures the average uncertainty of outcomes.
+
+
+=== Kernel & Kernel Size ===
+A Kernel is a small matrix used to scan over the input image or feature map. It "slides" over the image to detect patterns such as edges, corners, or textures.
+The Kernel size is the size of this matrix in all its dimensions. 
+
+
+=== Kullback-Leibler Divergence DKL(PQ) ===
+= Cross Entropy - Entropy of P
+Measures the extra surprise we get by using Q as our model instead of P. It is a surprise due to a wrong belief only.
+KL Divergence measures how much worse the prediction is compared to the best possible one (true distribution).
+
+
+=== Overfitting & Overtraining ===
+If you train a model too much and with not enough variety in the data, it will fail to classify very new data correctly. This is called overfitting. Overtraining is the process that leads to this. Detect this effect when Validation loss goes up while Training loss goes down. There will also be a huge gap between training accuracy and validation/test accuracy.
+
+
+=== Rectified Linear Unit ===
+A Rectified Linear Unit is a mathematical function, used as an Activation Function in Neural Networks. If the input x  is positive, it returns x. If the input x is negative, it returns 0.
+
+
+=== Validation loss ===
+Validation loss is the error (or cost) which your model makes on the validation dataset after each training epoch. It helps you understand, how well your neural network is performing on data it has never seen before. It plays a large role in avoiding overfitting. 

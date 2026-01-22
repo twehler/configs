@@ -1,0 +1,64 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2025-07-10T12:34:45+02:00
+
+====== LocalInstallation-Linux ======
+Created Thursday 10 July 2025
+
+===== 1. Clone Repository: =====
+git clone https://github.com/StyrbjornKall/TRIDENT
+
+===== Github description for Linux doesn't work: =====
+
+conda env create -f trident_development_environment.yml
+**PackagesNotFoundError: The following packages are not available from current channels:**
+
+  - argon2-cffi-bindings==21.2.0=py39h2bbff1b_0
+
+**... This is a build string which refers to a Windows-specific build!**
+
+===== 2. Workaround: Installing Trident via Conda and Docker on Linux =====
+**Creating virtual environment:**
+conda create -n trident python=3.10 
+conda activate trident
+
+**Downloading Trident server dependencies:**
+conda install -c conda-forge fastapi uvicorn pydantic
+pip install torch transformers rdkit pandas  
+
+**Install Docker:**
+sudo apt remove docker docker-engine docker.io containerd runc
+sudo apt update
+sudo apt install -y ca-certificates curl gnupg
+
+**Add Docker's official gpg key:**
+sudo install -m 0755 -d /etc/apt/keyrings
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | \
+  sudo gpg --dearmor -o [[/etc/apt/keyrings/docker.gpg]]
+
+**Set up docker repository:**
+echo \
+  "deb [arch=$(dpkg --print-architecture) \
+  signed-by=/etc/apt/keyrings/docker.gpg] \
+  https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > [[/dev/null]]
+
+**Install Docker Engine & run:**
+sudo apt update
+sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+sudo systemctl enable docker
+sudo systemctl start docker
+sudo docker run hello-world
+
+
+
+**Pull Server via docker (docker installs files always on system partition... if you don't want that make sure to check out Notebook "NotesUbuntu24")**
+
+docker pull styrbjornk/streamlit-app-trident-serve-v4.1
+docker run -p 8501:8501 styrbjornk/streamlit-app-trident-serve-v4.1
+
+===== 3. Running the local Server: =====
+sudo docker run -p 8501:8501 styrbjornk/streamlit-app-trident-serve-v4.1
+=== = ===
+

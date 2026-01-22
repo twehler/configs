@@ -1,0 +1,16 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2026-01-17T10:51:58+01:00
+
+====== Data-Types ======
+Created Saturday 17 January 2026
+
+=== Strings (two variants: can be either on stack or heap): ===
+fn main() {
+    
+	let x: &str  = "stack-variable";
+	let y: String = String::from("heap-string");
+
+	println!("{}", x);
+	println!("{}", y);
+}  

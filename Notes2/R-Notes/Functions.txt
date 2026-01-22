@@ -1,0 +1,25 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2025-07-28T17:22:51+02:00
+
+====== Functions ======
+Created Monday 28 July 2025
+
+=== = ===
+
+=== union: ===
+test_df1 <- data.frame(testrow = (c("a", "b", "c", "d")))
+test_df2 <- data.frame(testrow = (c("a", "e", "f", "c")))
+test_df <- data.frame(testrow = (union(test_df1$testrow, test_df2$testrow)))
+
+→ test_df will contain all elements which occur in both
+
+
+=== vapply: ===
+vapply() is similar to sapply() but allows you to explicitly specify the output type, making it safer and faster.
+vapply(X, FUN, FUN.VALUE, USE.NAMES = FALSE), where:
+
+X: Input list/vector (generation_list here).
+FUN: Function to apply to each element.
+FUN.VALUE: A template for the output type (character(1) means each output is a single string).
+USE.NAMES = FALSE: Skips assigning names to the output (for cleaner results).

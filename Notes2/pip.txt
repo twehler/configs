@@ -1,0 +1,19 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2025-07-31T22:47:55+02:00
+
+====== pip ======
+Created Thursday 31 July 2025
+
+=== Tell pip to use other partition (and also download files into it): ===
+**Inside enironment:**
+
+export TMPDIR=/mnt/sda3/data1/tmp
+mkdir -p $TMPDIR
+mkdir -p [[/mnt/sda3/data1/pip_cache]]
+export PIP_CACHE_DIR=/mnt/sda3/data1/pip_cache
+
+
+=== if necessary: clean pip cache ===
+pip cache purge
+sudo rm -rf [[/tmp/*]] 				 #careful: are other applications using it?

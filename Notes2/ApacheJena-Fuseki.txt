@@ -1,0 +1,11 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2025-11-03T12:50:11+01:00
+
+====== ApacheJena-Fuseki ======
+Created Monday 03 November 2025
+
+cd [[/mnt/sda3/data1/ApacheJena/Fuseki/apache-jena-fuseki-5.6.0/]]
+./fuseki-server
+
+→ In browser: navigate to http://localhost:3030/

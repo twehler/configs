@@ -1,0 +1,19 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2025-11-01T22:07:54+01:00
+
+====== FASTA ======
+Created Saturday 01 November 2025
+
+{{~/Desktop/AminoAcidsLetters.jpeg}}
+
+=== Special Additional Letters: ===
+B	Asx		Aspartic acid (D) or Asparagine (N) (Cannot be determined unambiguously)
+Z	Glx		Glutamic acid (E) or Glutamine (Q) (Cannot be determined unambiguously)
+J	Xle		Leucine (L) or Isoleucine (I) (Less common, but used to indicate ambiguity)
+X	Any		Any amino acid (The position is occupied, but the identity is unknown)
+* Stop	Termination codon (Indicates the end of a translated sequence)
+U	Sec		Selenocysteine (A 21st, rare amino acid)
+O	Pyl		Pyrrolysine (A 22nd, rare amino acid)
+
+

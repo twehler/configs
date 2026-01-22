@@ -1,0 +1,78 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2025-08-09T16:04:41+02:00
+
+====== Zotero BetterBibTex ======
+Created Saturday 09 August 2025
+
+
+
+
+
+
+
+====== Add to TexStudio: ======
+
+=== 1. Install Better BibTeX in Zotero ===
+
+	Open Zotero.
+
+	Go to Tools → Add-ons.
+
+	Search for Better BibTeX or download it from the official site:
+	https://retorque.re/zotero-better-bibtex/
+
+	Restart Zotero after installing.
+
+
+=== 2. Configure Better BibTeX ===
+
+	In Zotero: Edit → Preferences → Better BibTeX.
+
+	Enable Automatic export for a .bib file.
+
+	Choose BibLaTeX or BibTeX as your format (BibLaTeX is recommended if you use \usepackage[backend=biber]{biblatex} in LaTeX).
+
+	Set an export path (for example ~/Documents/references.bib).
+
+	Click Export now to generate the first .bib file.
+
+
+=== 3. Link the .bib file in TeXstudio ===
+
+	In your LaTeX document preamble:
+
+\usepackage[backend=biber,style=authoryear]{biblatex}
+\addbibresource{/full/path/to/references.bib}
+
+(If you use BibTeX instead of BibLaTeX, you’ll use \bibliography{references} later.)
+
+Make sure TeXstudio is set to use Biber (if using BibLaTeX):
+
+	Options → Configure TeXstudio → Build → Default Bibliography Tool → set to biber.
+
+
+====== Cite with TexStudio: ======
+
+=== 1. View the citation key in Zotero ===
+
+	Open Zotero.
+
+	Click on any reference in your library.
+
+	In the right-hand Item Pane, scroll down — you should see a field called Citation Key (added by Better BibTeX).
+
+		If you don’t see it: go to Edit → Preferences → Better BibTeX → Citation keys and make sure “Pin citation key” is enabled.
+
+
+3. Using the key in LaTeX
+
+Once you know the key (e.g., Smith2020), you just cite it:
+
+\parencite{Smith2020}
+
+or
+
+\textcite{Smith2020}
+
+

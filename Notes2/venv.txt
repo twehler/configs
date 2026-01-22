@@ -1,0 +1,12 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2025-08-03T21:41:17+02:00
+
+====== venv ======
+Created Sunday 03 August 2025
+
+=== create environment: ===
+python3 -m venv [[/path/to/folder]]
+
+=== activate environment: ===
+source /path/to/folder/bin/activate

@@ -1,0 +1,18 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2025-11-13T21:52:33+01:00
+
+====== Parallelization ======
+Created Thursday 13 November 2025
+
+
+
+1. Set up ssh on local machine
+2. Install mpich
+3. add the following section below the first line of the input file:
+
+%pal
+nprocs 8
+end
+
+4execute with the following command:

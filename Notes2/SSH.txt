@@ -1,0 +1,13 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2025-10-19T12:28:26+02:00
+
+====== SSH ======
+Created Sunday 19 October 2025
+
+=== Create key: ===
+ssh-keygen -t ed25519 -C "your_email@example.com"
+
+or:
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+

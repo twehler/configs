@@ -1,0 +1,36 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2025-08-24T13:28:03+02:00
+
+====== Swap ======
+Created Sunday 24 August 2025
+
+=== Create Swap file: ===
+
+sudo swapoff -a
+sudo fallocate -l 8G [[/mnt/hdd/swapfile]]		# designate size and name of swap file
+sudo chmod 600 [[/mnt/hdd/swapfile]]		# important: permissions for swap must be 600
+sudo mkswap [[/mnt/hdd/swapfile]]			# designate the file as swap
+sudo swapon [[/mnt/hdd/swapfile]]
+
+=== In [[/etc/fstab]]: ===
+(Replacing swap partition with swap file) remove or comment out old swap line, which looks like this:
+/swap.img   none    swap    sw    0   0
+
+At the end of the file, mount swap-file by adding this:
+/mnt/hdd/swapfile   none    swap    sw    0   0
+
+
+To resize swap file, remove it and recreate it with different size under the same name.
+
+=== Empty Swap: ===
+sudo swapoff -a
+# wait until swap is empty
+sudo swapon /mnt/sda3/swapfile
+
+=== Reduce Swappiness (scale from 200-0): ===
+sudo sysctl vm.swappiness=10   # lower means that more of the total RAM is being used before switching to swap
+
+
+
+

@@ -1,0 +1,23 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2025-08-12T12:54:00+02:00
+
+====== Install ======
+Created Tuesday 12 August 2025
+
+=== Set up conda-environment (along with Spyder packages, feel free to remove them): ===
+
+
+
+conda create -n AI-base python=3.12 \                                                               
+  pytorch torchvision torchaudio pytorch-cuda=12.4 \
+  numpy scikit-learn pandas matplotlib\
+  rdkit py3dmol\
+  spyder spyder-kernels spyder-notebook \
+  -c pytorch -c nvidia -c conda-forge
+
+=== If you want CPU-only environment: ===
+conda install pytorch -c conda-forge
+
+Otherwise:
+conda install pytorch

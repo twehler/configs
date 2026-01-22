@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2025-08-26T12:56:09+02:00
+
+====== DeepChem ======
+Created Tuesday 26 August 2025
+
+conda install conda-forge::deepchem

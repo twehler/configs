@@ -1,0 +1,13 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2025-10-11T10:57:44+02:00
+
+====== Data-Formats ======
+Created Saturday 11 October 2025
+
+=== Pickle format (.pkl): ===
+.to_pickle(<path>)
+
+=== HDF5 (.h5, important: library "pytables"): ===
+.to_hdf(<path>, key="df", mode="w")
+

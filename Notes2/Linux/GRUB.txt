@@ -1,0 +1,13 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2025-12-10T18:20:07+01:00
+
+====== GRUB ======
+Created Wednesday 10 December 2025
+
+=== Add second OS to GRUB: ===
+https://www.baeldung.com/linux/grub-bootloader-add-new-os
+
+sudo os-prober
+
+sudo cat /etc/default/grub | grep 'GRUB_DISABLE_OS_PROBER'    # should give "false"; if not, set it to "false" in /etc/default/grub 

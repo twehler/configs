@@ -1,0 +1,9 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2025-10-11T12:53:26+02:00
+
+====== RDKit-Conda-Issue ======
+Created Saturday 11 October 2025
+
+=== Important: Install RDKit like this (otherwise dependency hell): ===
+conda install -c conda-forge --override-channels rdkit cairo freetype pillow

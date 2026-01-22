@@ -1,0 +1,12 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2025-07-15T15:47:55+02:00
+
+====== Install program on separate partition ======
+Created Tuesday 15 July 2025
+
+apt download <package>
+
+sudo dpkg --instdir=/mnt/custom_install -i <package>.deb
+
+sudo apt-get install -f --instdir=/mnt/custom_install

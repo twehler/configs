@@ -1,0 +1,9 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2025-08-19T17:15:56+02:00
+
+====== os ======
+Created Tuesday 19 August 2025
+
+=== Not under Arch-Linux: ===
+conda install jmcmurray::os

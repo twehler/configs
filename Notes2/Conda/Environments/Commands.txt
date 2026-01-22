@@ -1,0 +1,10 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2025-08-14T19:29:24+02:00
+
+====== Commands ======
+Created Thursday 14 August 2025
+
+=== List packages in environment: ===
+conda activate myenv
+conda list

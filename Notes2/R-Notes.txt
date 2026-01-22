@@ -1,0 +1,7 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2025-07-15T15:28:59+02:00
+
+====== R-Notes ======
+Created Tuesday 15 July 2025
+

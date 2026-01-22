@@ -1,0 +1,44 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2026-01-03T17:17:29+01:00
+
+====== Vim ======
+Created Saturday 03 January 2026
+
+=== Enable proper plugin usage: ===
+sudo apt install npm
+
+=== Modes: ===
+1. Normal Mode for navigation & commands (press esc)
+2. Insert Mode for editing (press i)
+3. Visual Mode for copy/paste etc. (press v)
+
+====== Normal Mode Commands: ======
+
+=== Jump to end of line: ===
+$
+
+=== Select all: ===
+ggVG
+
+=== Quit: ===
+:q
+
+=== Delete Line: ===
+D
+
+=== find and replace: ===
+(here: replace "foo" with "bar")
+
+in current line:					:s/foo/bar/
+all occurrences in current line: 	:s/foo/bar/g
+in the whole file: 				:%s/foo/bar/g
+
+https://linuxize.com/post/vim-find-replace/
+
+=== count occurrence: ===
+:%s/pattern-here//gn
+
+
+
+

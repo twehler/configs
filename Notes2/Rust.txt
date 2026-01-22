@@ -1,0 +1,19 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2026-01-16T13:26:56+01:00
+
+====== Rust ======
+Created Friday 16 January 2026
+
+=== Create new project: ===
+cargo new <project name>
+
+=== Build and run project: ===
+cd <project main folder>
+cargo build
+cargo run
+
+=== Useful: ===
+
+Only checks the code for errors:
+cargo check

@@ -1,0 +1,98 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2026-01-20T20:31:57+01:00
+
+====== Crates-Imports ======
+Created Tuesday 20 January 2026
+
+=== The mod keyword: ===
+mod serves as a "declaration" of a module
+
+**This imports a module called ab123.rs:**
+
+mod ab123;
+
+
+
+**This creates a module and writes its content inside the target file:**
+
+mod ab123 {
+	// "Create a module named ab123 and put this code inside it."
+	pub fn hello() {}
+}
+
+
+
+=== Simple path: ===
+Project: example_project
+Main file: [[/example_project/src/main.rs]]
+Module: [[/example_project/src/ab123.rs]]
+Struct in Module: Rustacean
+
+
+**Ensure the struct is marked as pub, otherwise main.rs won't see it:**
+pub struct Rustacean {
+	pub name: String,
+}
+
+**Inside main.rs: Declare the module and import it via its path:**
+mod ab123; // This looks for src/ab123.rs, only do once
+
+use ab123::Rustacean;
+
+fn main() {
+	let crab = Rustacean { name: String::from("Ferris") };
+}
+
+**If you want to import everything from a module (discouraged to prevent chaos):**
+
+mod ab123;
+
+use ab123::*; // This brings all public items into the global scope
+
+fn main() {
+	// Now you can use Rustacean directly without ab123::
+	let crab = Rustacean { name: String::from("Ferris") };
+}
+
+=== Export from sub-folder: ===
+
+→ Now ab123.rs is in src/models/
+
+(make structs, enums etc. public first)
+
+**In main.rs: Declare the folder as a module**
+
+// 1. Declare the directory as a module
+mod models {
+	// 2. Inside the directory module, declare the file
+	pub mod ab123; 
+}
+
+use models::ab123::Rustacean;
+
+fn main() {
+	let crab = Rustacean { name: String::from("Ferris") };
+}
+
+**Second, more explicit way:**
+
+// src/main.rs
+mod models; // Rust looks for src/models.rs OR src/models/mod.rs
+
+use models::ab123::Rustacean;
+
+
+=== Pro-Tip: "Re-exporting" to make work easier for other users ===
+pub mod models {
+	pub mod ab123;
+	pub use ab123::Rustacean; // Re-export!
+}
+
+// Now you can use it shorter:
+use models::Rustacean;
+
+
+
+
+

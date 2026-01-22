@@ -1,0 +1,9 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2025-07-18T16:08:50+02:00
+
+====== SKLearn ======
+Created Friday 18 July 2025
+
+conda install scikit-learn
+

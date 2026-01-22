@@ -1,0 +1,12 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2025-10-11T11:27:46+02:00
+
+====== Restore-Environments ======
+Created Saturday 11 October 2025
+
+conda list --revisions
+
+conda install --revision <revision number>
+
+→ Conda will restore the complete state of the environment at that revision.

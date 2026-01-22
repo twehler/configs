@@ -1,0 +1,12 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2025-11-16T18:18:33+01:00
+
+====== Models ======
+Created Sunday 16 November 2025
+
+=== !PBE D4 DEF2-SVP ===
+* Good for geometry optimization
+* Not good for solvation, especially of ions
+* Not good in general for ions, solvation and Free Energy (!PBE-D4 def2-TZVPP is better for that)
+

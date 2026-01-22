@@ -1,0 +1,21 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2025-07-11T18:47:04+02:00
+
+====== docker ======
+Created Friday 11 July 2025
+
+**Tell Docker to move files to another partition:**
+sudo systemctl stop docker
+sudo systemctl stop docker.socket
+sudo mkdir -p [[/mnt/sda3/data1/docker]]
+sudo nano [[/etc/docker/daemon.json]]
+#In nano add:
+{
+  "data-root": "/mnt/sda3/data1/docker"
+}
+#Move existing data:
+sudo rsync -aP /var/lib/docker/ [[/mnt/sda3/data1/docker/]]
+#Verify:
+sudo docker info | grep "Docker Root Dir"
+[[#Should]] now say: "Docker Root Dir: /mnt/sda3/data1/docker"

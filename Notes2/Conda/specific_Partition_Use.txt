@@ -1,0 +1,16 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2025-07-10T14:13:26+02:00
+
+====== specific Partition Use ======
+Created Thursday 10 July 2025
+
+mkdir -p [[/mnt/bigdisk/conda-envs]]
+
+=== Config Conda: ===
+conda config --add envs_dirs /mnt/bigdisk/conda-envs
+conda config --remove envs_dirs $HOME/.conda/envs 2>/dev/null
+
+=== Tell Conda to not use home directory: ===
+conda config --remove envs_dirs $HOME/.conda/envs
+conda config --remove pkgs_dirs $HOME/.conda/pkgs

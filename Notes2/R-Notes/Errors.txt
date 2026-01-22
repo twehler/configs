@@ -1,0 +1,13 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2025-07-28T14:37:34+02:00
+
+====== Errors ======
+Created Monday 28 July 2025
+
+=== "$ operator is invalid for atomic vectors" ===
+
+→ df is a vector, not a data frame
+Solution: Make df a data frame:
+
+df <- data.frame(column_name = df)

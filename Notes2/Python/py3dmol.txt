@@ -1,0 +1,10 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2025-07-31T19:51:20+02:00
+
+====== py3dmol ======
+Created Thursday 31 July 2025
+
+=== install inside conda environment: ===
+conda activate myenv
+pip install py3dmol
